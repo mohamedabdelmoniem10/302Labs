@@ -1,0 +1,173 @@
+.left
+{
+    background-color: #FFCD38;
+    height: 100vh;
+}
+.right
+{
+    background-color: #005e97;
+    height: 100vh;
+    align-items: flex-end;
+
+}
+.logo
+{
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.bg{
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-30%);
+}
+.form-group
+{
+    margin: 0;
+    position: relative;
+}
+.form-control
+{
+    background: none;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    padding: 0;
+    margin: 0 30px;
+    color: #fff;
+}
+
+label{
+    margin-bottom: 0 !important;
+}
+
+input::placeholder
+{
+    color: #ffffff87;
+    font-size: 13px;
+}
+input:focus
+{
+    box-shadow: none;
+}
+form{
+    z-index: 1;
+    width: 70%;
+    color: #fff;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.subtn:focus
+{
+    outline: none;
+}
+.txtc
+{
+    text-align: center;
+    margin: 75px 0;
+}
+.subtn{
+    background-color: #FFCD38;
+    margin: 50px auto;
+    display: block;
+    width: 37%;
+    border: none;
+    border-radius: 15px;
+    box-shadow: #000 2px -1px 15px -1px;
+    font-size: 21px;
+    padding: 1px 10px;
+}
+.avatar
+{
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+.btnswitching
+{
+    position: relative;
+    z-index: 2;
+}
+.hrbtn
+{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.hlbtn
+{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.btn-outline-warning
+{
+    margin-top: 15px;
+}
+.formbg
+{
+    position: absolute;
+    top: 15px;
+    z-index: 1;
+    width: 80%;
+    height: 90%;
+    margin: auto;
+    display: block;
+    left: 10%;
+}
+    .eye
+    {
+        cursor: pointer;
+        background-image: url(../../assets/eye.svg);
+        position: absolute;
+        top: 60%;
+        left: 100%;
+        width: 15px;
+        height: 15px;
+        background-size: cover;
+    }
+    .eyeoff{
+        background-image: url(../../assets/eyeoff.svg);
+    }
+.warning
+{
+    color: rgb(238, 80, 17);
+    font-size: 15px;
+    position: absolute;
+    top: 60%;
+    right: 0;
+    z-index: -1;
+}
+.warningpass
+{
+    color: #000;
+    font-size: 14px;
+}
+.sucs
+{
+    color: rgb(105, 238, 17);
+    font-size: 15px;
+    position: absolute;
+    top: 60%;
+    left: 100%;
+}
+.ntval
+{
+    border-color: red;
+}
+.down
+{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}

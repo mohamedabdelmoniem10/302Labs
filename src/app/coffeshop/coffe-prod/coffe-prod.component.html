@@ -1,0 +1,112 @@
+<ngx-spinner
+    bdColor="#005e97"
+    size="large"
+    color="#fff"
+    type="ball-clip-rotate-pulse"
+    fullScreen="false"
+  >
+</ngx-spinner>
+
+<div class="container-fluid">
+        <div class="row">
+            <app-aside class="left p-0 col-lg-3" [class.abs]="enableSideBar"></app-aside>
+            <!-- <app-rent class="right col-lg-9"></app-rent> -->
+            <div class="right col-lg-9">
+                <div class=" bgc container-fluid">
+                        <button class="btn btn-warning d-lg-none" *ngIf="!enableSideBar" (click)="showSideBar()">
+                                <img src="../../assets/menu.png" alt="">
+                             </button>
+                        <div class="row row1 ">
+
+
+                            <!-- !-------------------------- the products ------------------------! -->
+
+
+                            <!-- this is the products down here  -->
+                            <!-- it will implementer from the database from backend -->
+
+                            <div class="cati-div col-sm-4" *ngFor="let obj of result">
+                                    <div class="catdirdiv" (click)="previewItem(obj._id, obj.image, obj.price, obj.name)">
+                                        <img src="{{ bEurl + obj.image}}" alt="" class="cati" style="width: 75%">
+                                        <h3>{{ obj.name }}</h3>
+                                        <div class="spec">
+                                            <span class="price"> Price{{obj.price}}  __  {{obj.availability}}</span>
+                                        </div>
+                                    </div>
+                           
+                                    <!-- this is the pop up view of the item -->
+                                    <div class="item-perview col-lg-9" *ngIf="preview">
+                                        <div class="close" (click)="closeItem()">
+                                            <img src="../../../assets/close.svg" alt="" class="close-img">
+                                        </div>
+                                        <div class="box" [formGroup]="coffing">
+                                            <img src="{{ bEurl + image }}" alt="" class="cati">
+                                            <div class="txt">
+                                            <h1>{{ name }}</h1>
+                                            <div class="spec-item">
+                                                How many of this?<input formControlName="no" type="number" (change)="calcPrice()" (keyup)="calcPrice()"><br>
+                                                <span class="price">Price for one:{{ price }}  //  Total price: {{ price * h }}</span>
+                                            </div>
+                                            Do You Have a Specific Order? please note that here.<br>
+                                            <input type="text" class="custom" formControlName="customization"><br>
+                                            please type your place!<br>
+                                            <input type="text" class="custom" formControlName="place">
+                                            <button class="btn item" (click)="coffeReq()">Rent</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+
+
+
+                            <!--                      |_d_o_n'_t_c_a_r_e|-->
+                            <!--                      |________|--------| -->
+                            <!-- this below for testing\\    // -->
+                            <!-- this below for testing \\  // -->
+                            <!-- this below for testing  \\//-->
+                            <!-- this below for testing   \/-->
+                            <!-- <div class="cati-div col-sm-4">
+                                    <div class="catdirdiv" (click)="previewItem()">
+                                        <img src="https://wallpapercave.com/wp/TCptXoL.jpg" alt="" class="cati" style="width: 75%;">
+                                        <h3>Latte</h3>
+                                        <div class="spec">
+                                            <span class="price"> Price: 5 LE  __  Aviliable</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- this is the pop up view of the item --/>
+                                    <div class="item-perview col-lg-9" *ngIf="preview">
+                                        <div class="close" (click)="closeItem()">
+                                            <img src="../../../assets/close.svg" alt="" class="close-img">
+                                        </div>
+                                        <div class="box" [formGroup]="coffing">
+                                            <img src="https://milklife.com/sites/default/files/styles/recipe_zoomable_images_large/public/main_image/Recipe/2013/09/18/Protein-Packed%20Latte_square.jpg?itok=vwVtOEyA" alt="" class="cati" style="width: 75%;">
+                                            <div class="txt">
+                                            <h1>Latte</h1>
+                                            <input formControlName="id" style="display: none;" value="ldkfjhgfjdkfgjfdkl49857483909458itkf">
+                                            <div class="spec-item">
+                                                How many of this?<input formControlName="no" type="number" (change)="calcPrice()" (keyup)="calcPrice()">
+                                                <br>
+                                                <span class="price">Price for one: 5 L.E // Total price: <div class="t-price" formControlName="newPrice">{{ 5 * h }}</div></span>
+                                                <br>
+                                                Do You Have a Specific Order? please note down here.<br>
+                                                <input type="text" class="custom" formControlName="customization">
+                                            <button class="btn item" (click)="coffeReq()" >Rent</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div> -->
+
+                            <!-- !-------------------------- the footer ------------------------! -->
+
+                            <!-- this is the footer i will edit it after finishing the integration of the backend data -->
+                                <div class="row footer">
+                                    <img src="../../assets/coffe/coffefooter.png" alt="" class="coffefooter">
+                                </div>
+                        </div>
+            </div>
+        </div> 
+    </div>
+
+<router-outlet></router-outlet>

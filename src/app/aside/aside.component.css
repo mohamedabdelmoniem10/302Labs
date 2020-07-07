@@ -1,0 +1,113 @@
+hr
+{
+    width: 70%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.6);
+}
+.logo
+{
+    width: 35%;
+    height: 10%;
+    margin: 6% auto;
+}
+.bgc
+{
+    text-align: center;
+    background-color: #FFCD38;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+}
+p
+{
+    font-size: 13px;
+}
+.bgshape
+{
+    width: 130%;
+    height: 60%;
+    position: absolute;
+    top: 30%;
+    left: -10%;
+    z-index: -1;
+}
+ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 10px auto;
+    width: 90%;
+}
+.nav-ul li
+{
+    font-size: 20px;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+.nav-ul li:focus
+{
+    outline: none;
+}
+.linkshr
+{
+    width: 100%;
+    margin: 0;
+}
+.search
+{
+    margin: 10px auto;
+    width: 50px;
+}
+.search-input
+{
+    width: 100%;
+    margin: 10px auto;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+}
+.subtn{
+    background-color: #fff;
+    margin: 20px auto;
+    display: block;
+    width: 50%;
+    border: none;
+    border-radius: 15px;
+    box-shadow: #000 2px -1px 15px -1px;
+    font-size: 21px;
+    padding: 1px 10px;
+}
+.subtn:focus
+{
+    outline: none;
+}
+.active
+{
+    color: #fff;
+    background-color:rgba(255, 171, 58, 0.5);
+    box-shadow: #000 2px -1px 15px -1px;
+}
+.logo-dyn{
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    margin: 20px;
+    box-shadow: #000 1px 1px 17px 1px;
+}
+.userinfo
+{
+    /* text-align: left; */
+}
+.arrow-btn{
+    box-shadow: #000 1px 1px 10px;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+}
+.btn img{
+    width: 20px;
+}

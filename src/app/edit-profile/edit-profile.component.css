@@ -1,0 +1,165 @@
+.data
+{
+    color: #ffffff9e;
+    margin: 10px;
+    position: relative;
+}
+hr
+{
+    width: 80%;
+    border-top: 1px solid #ffffff9e;
+}
+.edit
+{
+    position: absolute;
+    right: 12%;
+    cursor: pointer;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.bold
+{
+    color: #fff;
+    position: absolute;
+    left: 12%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+button.edit
+{
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.btn-success, .btn-secondary{
+    position: absolute;
+    right: 12%;
+}
+.btn-warning
+{
+    position: absolute;
+    top: 100%;
+}
+.input-new-data
+{
+    background: #FFFFFF;
+    border: none;
+    color: #000;
+    text-decoration: underline;
+    margin: 2px;
+}
+.input-new-data:focus
+{
+    outline: none;
+}
+
+
+.subtn{
+    background-color: #fff;
+    margin: 20px auto;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    box-shadow: #000 2px -1px 15px -1px;
+    font-size: 21px;
+    padding: 1px 10px;
+}
+.subtn:focus
+{
+    outline: none;
+}
+.subtnactive
+{
+    display: none;
+}
+.formbg
+{
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+    width: 65%;
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.info{
+    left: 50%;
+    top: 30%;
+}
+.information
+{
+    position: absolute;
+    top: 35%;
+    left: 0%;
+    margin: 20px;
+    text-align: start;
+    width: 90%;
+}
+p
+{
+    font-size: 20px
+}
+.imgs
+{
+    position: relative;
+}
+
+.imgs > input
+{
+    display: none;
+}
+.show:hover > .uploadimg
+{
+    visibility: visible;
+    display: inline;
+}
+
+.uploadimg
+{
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: 65%;
+    left: 60%;
+    visibility: hidden;
+}
+.table thead th
+{
+    color: #fff;
+    font-size: 25px;
+    border-top: 0;
+    cursor: pointer;
+}
+caption{
+    color: #ffffff70;
+    text-align: center;
+    caption-side: top;
+}
+.closeimg
+{
+    position: absolute;
+    top: 7%;
+    left: 90%;
+    width: 45px;
+    background: #fff;
+    border-radius: 100%;
+    padding: 5px;
+}
+.active-tap
+{
+    background-color: #ccc;
+    color: #000 !important;
+    border: 2px solid #fff !important;
+}
+td{
+    text-align: center;
+}
+.data{
+    -webkit-text-stroke: #000 .2px;
+    color: #fff 
+}
+.beData
+{
+    text-align: end;
+    padding-right: 10%;
+}

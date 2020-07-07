@@ -1,0 +1,109 @@
+<ngx-spinner
+    bdColor="#005e97"
+    size="large"
+    color="#fff"
+    type="ball-clip-rotate-pulse"
+  >
+</ngx-spinner>
+
+<div class="container-fluid">
+        <div class="row">
+            <app-aside class="left p-0 col-lg-3" [class.abs]="enableSideBar"></app-aside>
+            <!-- <app-rent class="right col-lg-9"></app-rent> -->
+            <div class="right col-lg-9">
+                <div class=" bgc container-fluid">
+                        <button class="btn btn-warning d-lg-none" *ngIf="!enableSideBar" (click)="showSideBar()">
+                                <img src="../../assets/menu.png" alt="">
+                             </button>
+                        <div class="row row1 ">
+
+
+                            <!-- !-------------------------- the products ------------------------! -->
+
+
+                            <!-- this is the products down here  -->
+                            <!-- it will implementer from the database from backend -->
+
+                            <div class="cati-div col-sm-4" *ngFor="let Obj of result">
+                                    <div class="catdirdiv" (click)="previewItem(Obj.image, Obj.name, Obj.info, Obj._id, Obj.price)">
+                                        <img src="{{ bEurl + Obj.image }}" alt="" class="cati" style="width: 75%;">
+                                        <h3>{{ Obj.name }}</h3>
+                                        <div class="spec">
+                                            <span class="price"><img src="../../../assets/clock.svg" alt="" class="clock"> {{Obj.price}}/3h  __  {{Obj.availabilityInStock}} in stoke</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- this is the pop up view of the item -->
+                                    <div class="item-perview col-lg-9" *ngIf="preview">
+                                        <div class="close" (click)="closeItem()">
+                                            <img src="../../../assets/close.svg" alt="" class="close-img">
+                                        </div>
+                                        <div class="box">
+                                            <img src="{{ bEurl + image }}" alt="" class="cati" style="width: 75%;">
+                                            <div class="txt" [formGroup]="renting">
+                                                <h1>{{ name }}</h1>
+                                                <h4>some info:</h4>
+                                                <p>{{ info }}</p>
+                                                <div class="spec-item">
+                                                    place."where are you?"<br><input type="text" formControlName="place"><br>
+                                                    How many Items?<input class='input' type="number" formControlName="noItems">
+                                                    How many hours?<input class='input' type="number" formControlName="noHour" (change)="calcPrice()" (keyup)="calcPrice()"><br>
+                                                    <span class="price"><img src="../../../assets/clock.svg" alt="" class="clock">{{ price }}/3h  Total price: {{ h * price / 3 }}__  {{Obj.availabilityInStock}} in stoke</span>
+                                                </div>
+                                                <button class="btn item" (click)="rentReq()" >Rent</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <!--                      |_d_o_n'_t_c_a_r_e|-->
+                            <!--                      |________|--------| -->
+                            <!-- this below for testing\\    // -->
+                            <!-- this below for testing \\  // -->
+                            <!-- this below for testing  \\//-->
+                            <!-- this below for testing   \/-->
+                            <!-- <div class="cati-div col-sm-4">
+                                    <div class="catdirdiv" (click)="previewItem()" routerlink="/keyboard">
+                                        <img src="https://wallpapercave.com/wp/TCptXoL.jpg" alt="" class="cati" style="width: 75%;">
+                                        <h3>Samsung 60 inch</h3>
+                                        <div class="spec">
+                                            <span class="price"><img src="../../../assets/clock.svg" alt="" class="clock"> 30/3h  __  5 in stoke</span>
+                                        </div>
+                                    </div>
+                                
+
+                                                                                    
+
+                                <div class="item-perview col-lg-9" *ngIf="preview">
+                                    <div class="close" (click)="closeItem()">
+                                        <img src="../../../assets/close.svg" alt="" class="close-img">
+                                    </div>
+                                    <div class="box">
+                                        <img src="https://wallpapercave.com/wp/TCptXoL.jpg" alt="" class="cati" style="width: 75%;">
+                                        <div class="txt" [formGroup]="renting">
+                                            <h1>Samsung 60 inch</h1>
+                                            <input formControlName="id" style="display: none;" value="djsaflkweiorukdfjsleiruo">
+                                            <h4>some info:</h4>
+                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, nulla recusandae! Est quibusdam, beatae dolorum inventore dignissimos quidem deleniti fugit praesentium alias ullam voluptatem illo officiis similique velit delectus quos?</p>
+                                            <div class="spec-item">
+                                                How many hours?<input formControlName="noHour" type="number" (change)="calcPrice()" (keyup)="calcPrice()"> <div class="t-price" formControlName="newPrice">{{ h * 30 / 3 }}</div>
+                                                <span class="price"><img src="../../../assets/clock.svg" alt="" class="clock"> 30/3h  __  5 in stoke</span>
+                                            </div>
+                                            <button class="btn item">Rent</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <!-- !-------------------------- the footer ------------------------! -->
+
+                            <!-- this is the footer i will edit it after finishing the integration of the backend data -->
+                                <div class="row footer">
+                                    <img src="../../../assets/footer.png" alt="" class="coffefooter">
+                                </div>
+                        </div>
+                    </div>
+            </div>
+        </div> 
+    </div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,79 @@
+<ngx-spinner
+    bdColor="#005e97"
+    size="large"
+    color="#fff"
+    type="ball-clip-rotate-pulse"
+    fullScreen="false"
+  >
+</ngx-spinner>
+
+<div class="container-fluid">
+    <div class="row">
+        <app-aside class="left p-0 col-lg-3" [class.abs]="enableSideBar"></app-aside>
+       <!-- <app-rent class="right col-lg-9"></app-rent> -->
+            <div class="right col-lg-9">
+                <div class=" bgc container-fluid">
+                    <button class="btn btn-warning d-lg-none" *ngIf="!enableSideBar" (click)="showSideBar()">
+                        <img src="../../assets/menu.png" alt="">
+                     </button>
+                    <!-- total payment-->
+                    <div class="total-payment container">
+                        <h1>Total Payment</h1>
+                        <hr>
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Cofe</th>
+                              <th scope="col">Rent</th>
+                              <th scope="col">Total</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>{{ drinkTotalPrice }}L.E</td>
+                              <td>{{ rentTotalPrice }}L.E</td>
+                              <td>{{ drinkTotalPrice + rentTotalPrice }}L.E</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                    <!-- products payment-->
+                    <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">No.</th>
+                                <th scope="col">No.Hours</th>
+                                <th scope="col">Paid</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let bill of orders">
+                                <td>{{ orders.indexOf(bill) }}</td>
+                                <td>{{ bill.productID.name }}</td>
+                                <td>{{ bill.date }}</td>
+                                <td>{{ bill.productID.price }}L.E</td>
+                                <td>{{ bill.NumofItems }}</td>
+                                <td>
+                                  <div *ngIf="bill.NumofHours">{{ bill.NumofHours }}H</div>
+                                  <div *ngIf="!bill.NumofHours">____</div>
+                                </td>
+                                <td>
+                                  <div *ngIf="bill.paid">	&#9989;</div>
+                                  <div *ngIf="!bill.paid">&#10060;</div> 
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                </div>
+            </div>
+    </div>
+</div>
+ 
+ <router-outlet></router-outlet>
+ 
+ 

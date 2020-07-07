@@ -1,0 +1,196 @@
+<div class="container-fluid">
+    <div class="row">
+      <!-- the left container here -->
+        <div class="left col-lg-6">
+            <img src="../assets/302logo.png" alt="" class="logo" title="302Labs">
+            <img src="../assets/asidebg.png" alt="" class="bg">
+            <button (click)="downMeth()" #down class="down btn btn-info d-block d-sm-none d-md-none d-lg-none">
+              Signing
+            </button>
+        </div>
+  
+        <!-- the right container here -->
+        <div class="right col-lg-6" id="down">
+  
+  
+  
+        <!-- this is the heading btns -->
+
+        <div class="btnswitching row">
+  
+            <div class="d-flex justify-content-end col">
+              <div ngbDropdown class="d-inline-block">
+                  <button [class.active]="!Company && !Login && !Customer && !Employee" class="btn btn-outline-warning hlbtn" (click)="login()">Log In</button>
+                <button class="btn btn-outline-warning hrbtn" [class.active]="Company || Login || Customer || Employee" id="dropdownBasic1" ngbDropdownToggle>Sign up</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button ngbDropdownItem [class.active]="Company && !Login && !Customer && !Employee" (click)="company()">Company</button>
+                  <button ngbDropdownItem [class.active]="!Company && !Login && Customer && !Employee" (click)="customer()">Customer</button>
+                  <button ngbDropdownItem [class.active]="!Company && !Login && !Customer && Employee" (click)="employee()">Employee</button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- end here -->
+  
+  
+  
+          <div class="center">
+  
+          
+          
+          <!-- this is the background of the form  -->
+          <img src="../assets/formbackground.png" alt="" class="formbg">
+          
+
+
+
+
+          <!-- this form for login signup -->
+          <form *ngIf="!Company && !Login && !Customer && !Employee" [formGroup]="logInForm">
+        <div class="txtc">
+            <h1 *ngIf="!Company || !Login || !Customer || !Employee">Log In</h1>
+        </div>
+
+        <!-- this is for email -->
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" autocomplete="off" class="form-control" (keyup.enter)="validate(paramlogin)" [class.ntval]="email" (click)="valid()" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp" email>
+              <div class="warning" *ngIf="email">{{ email }}</div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="{{ type }}" class="form-control" (keyup.enter)="validate(paramlogin)" id="exampleInputPassword1" (click)="valid()" formControlName="password" [class.ntval]="password" minLength="5" required>
+              <div class="warning" *ngIf="password">{{ password }}</div>
+              <div class="eye" *ngIf="logInForm.value.password && type === 'text'" (click)="toggleShow()"></div>
+                <div class="eye eyeoff" *ngIf="logInForm.value.password && type === 'password'" (click)="toggleShow()"></div>
+            </div>
+          
+            <button type="button" class="btn btn-warning" class="subtn" (click)="validate(paramlogin)">Log In</button>
+          </form>
+
+
+
+          <!-- this form for company signup -->
+          <form *ngIf="Company && !Login && !Customer && !Employee" [formGroup]="companySignUp">
+            <div class="form-group">
+              <label for="exampleInputCompanyName">Company Name</label>
+              <input type="text" autocomplete="off" class="form-control" id="exampleInputCompanyName" [class.ntval]="name" (click)="valid()" formControlName="name" minLength="3">
+              <div class="warning" *ngIf="name">{{ name }}</div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputRoomNumber">Room Number</label>
+              <input type="text" autocomplete="off" class="form-control" id="exampleInputRoomNumber" [class.ntval]="roomnumber" (click)="valid()" formControlName="roomNumber">
+              <div class="warning" *ngIf="roomnumber">{{ roomnumber }}</div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputphone">phone Number</label>
+              <input type="text" autocomplete="off" class="form-control" id="exampleInputPhone" minlength="11" [class.ntval]="phone" (click)="valid()" formControlName="phone" minLength="11">
+              <div class="warning" *ngIf="phone">{{ phone }}</div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputowner">Owner</label>
+              <input type="text" autocomplete="off" class="form-control" id="exampleInputowner" [class.ntval]="owner" (click)="valid()" formControlName="owner">
+              <div class="warning" *ngIf="owner">{{ owner }}</div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" autocomplete="off" class="form-control" id="exampleInputEmail1" [class.ntval]="email" (click)="valid()" aria-describedby="emailHelp" formControlName="email">
+              <div class="warning" *ngIf="email">{{ email }}</div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="{{ type }}" class="form-control" id="exampleInputPassword1" [class.ntval]="password" (click)="valid()" formControlName="password" minLength="5">
+              <div class="warning" *ngIf="password">{{ password }}</div>
+              <div class="eye" *ngIf="companySignUp.value.password && type === 'text'" (click)="toggleShow()"></div>
+              <div class="eye eyeoff" *ngIf="companySignUp.value.password && type === 'password'" (click)="toggleShow()"></div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputConfirmPassword">Confirm Password</label>
+              <input type="password" class="form-control" id="exampleInputConfirmPassword" [class.ntval]="confirmmsg" (keyup)="confirmPassword(paramcompany)" formControlName="confirmPassword">
+              <div class="warningpass" *ngIf="confirmmsg">{{ confirmmsg }}</div>
+              <div class="sucs" *ngIf="confirmmsgsuc">{{ confirmmsgsuc }}</div>
+            </div>
+          
+            <button type="button" class="btn btn-warning" class="subtn" (click)="validate(paramcompany)" (keyup.enter)="validate(paramcompany)">Sign Up</button>
+          </form>
+
+
+          <!-- this form for customer signup -->
+          <form *ngIf="!Company && !Login && Customer && !Employee" [formGroup]="customerSignUp">
+            <div class="form-group">
+                <label for="exampleInputEmail1">E.mail</label>
+                <input type="email" autocomplete="off" class="form-control" [class.ntval]="email" (click)="valid()" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+                <div class="warning" *ngIf="email">{{ email }}</div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPhone">Phone Number</label>
+              <input type="text" autocomplete="off" class="form-control" id="exampleInputPhone" minlength="11" [class.ntval]="phone" (click)="valid()" formControlName="phone" minLength="11">
+              <div class="warning" *ngIf="phone">{{ phone }}</div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputName">Name</label>
+              <input type="text" autocomplete="off" class="form-control" [class.ntval]="name" (click)="valid()" id="exampleInputName" formControlName="name" minLength="5">
+              <div class="warning" *ngIf="name">{{ name }}</div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="{{ type }}" class="form-control" id="exampleInputPassword1" [class.ntval]="password" (click)="valid()" formControlName="password" minLength="5">
+              <div class="warning" *ngIf="password">{{ password }}</div>
+              <div class="eye" *ngIf="customerSignUp.value.password && type === 'text'" (click)="toggleShow()"></div>
+              <div class="eye eyeoff" *ngIf="customerSignUp.value.password && type === 'password'" (click)="toggleShow()"></div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputConfirmPassword">Confirm Password</label>
+              <input type="password" class="form-control" id="exampleInputConfirmPassword" [class.ntval]="confirmmsg" (keyup)="confirmPassword(paramcustomer)" formControlName="confirmPassword">
+              <div class="warningpass" *ngIf="confirmmsg">{{ confirmmsg }}</div>
+              <div class="sucs" *ngIf="confirmmsgsuc">{{ confirmmsgsuc }}</div>
+            </div>
+          
+            <button type="button" class="btn btn-warning" class="subtn" (keyup.enter)="validate(paramcustomer)" (click)="validate(paramcustomer)">Sign Up</button>
+          </form>
+
+
+
+
+          <!-- this form for emloyee sign up -->
+          <form *ngIf="!Company && !Login && !Customer && Employee" [formGroup]="employeeSignUp">
+            <div class="form-group">
+              <select class="form-control" id="exampleInputCompany" formControlName="companyRef" [class.ntval]="companyRef" >
+                <option *ngFor="let company of companies" value={{company.name}}>{{company.name}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" autocomplete="off" class="form-control" [class.ntval]="email" (click)="valid()" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+              <div class="warning" *ngIf="email">{{ email }}</div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPhone">Phone Number</label>
+              <input type="text" autocomplete="off" class="form-control" id="exampleInputPhone" minlength="11" [class.ntval]="phone" (click)="valid()" formControlName="phone" minLength="11">
+              <div class="warning" *ngIf="phone">{{ phone }}</div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputName">Name</label>
+              <input type="text" autocomplete="off" class="form-control" [class.ntval]="name" (click)="valid()" id="exampleInputName" formControlName="name" minLength="5">
+            </div>
+            <div class="form-group">
+              
+              <label for="exampleInputPassword1">Password</label>
+              <input type="{{ type }}" class="form-control" [class.ntval]="password" (click)="valid()" id="exampleInputPassword1" formControlName="password" minLength="5">
+              <div class="warning" *ngIf="password">{{ password }}</div>
+              <div class="eye" *ngIf="employeeSignUp.value.password && type === 'text'" (click)="toggleShow()"></div>
+              <div class="eye eyeoff" *ngIf="employeeSignUp.value.password && type === 'password'" (click)="toggleShow()"></div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputConfirmPassword">Confirm Password</label>
+              <input type="password" class="form-control" id="exampleInputConfirmPassword" [class.ntval]="confirmmsg" (keyup)="confirmPassword(paramemployee)" formControlName="confirmPassword">
+              <div class="warningpass" *ngIf="confirmmsg">{{ confirmmsg }}</div>
+              <div class="sucs" *ngIf="confirmmsgsuc">{{ confirmmsgsuc }}</div>
+            </div>
+          
+            <button type="button" class="btn btn-warning" class="subtn" (keyup.enter)="validate(paramemployee)" (click)="validate(paramemployee)">Sign Up</button>
+          </form>
+        </div>
+    </div>
+  </div>

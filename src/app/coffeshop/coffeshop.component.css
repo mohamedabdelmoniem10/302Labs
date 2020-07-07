@@ -1,0 +1,85 @@
+app-aside{
+    position: fixed;
+    height: 100%;
+}
+.right
+{
+    padding: 0 0 0 10px;
+    position: absolute;
+    right: 0;
+}
+.row1
+{
+    padding: 50px 20px
+}
+.coffefooter
+{
+    width: 100%;
+}
+.footer
+{
+    padding: 0;
+    margin-left: 0;
+}
+.bgc
+{
+    background-color: #005e97;
+    width: 100%;
+    min-height: 100vh;
+    padding-left: 0; 
+    box-shadow: #005e97 4px 8px 6px 11px
+}
+.cati
+{
+    width: 70%;
+    margin: 0 auto;
+    display: block
+}
+.catdirdiv:hover 
+{
+    border: 2px solid #fff
+}
+.cati-div
+{
+    padding: 10px;
+}
+.catdirdiv
+{
+    cursor: pointer;
+    width: 311px;
+    height: 218px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    padding: 0px;
+}
+h3
+{
+    padding: 15px;
+    color: #fff;
+    margin: 0;
+}
+
+.abs
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75%;
+    min-height: 100%;
+    z-index: 2000;;
+}
+.btn img{
+    width: 20px
+}
+.btn-warning{
+    position: fixed;
+    top: 5%;
+    left: 3%;
+    z-index: 1999;
+}
+
+
+
+/*this for footer*/

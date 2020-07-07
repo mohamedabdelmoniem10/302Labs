@@ -1,0 +1,85 @@
+<ngx-spinner
+    bdColor="#005e97"
+    size="large"
+    color="#fff"
+    type="ball-clip-rotate-pulse"
+  >
+</ngx-spinner>
+
+
+<div class="container-fluid">
+        <div class="row">
+            <app-aside class="left p-0 col-lg-3" [class.abs]="enableSideBar"></app-aside>
+            <!-- <app-rent class="right col-lg-9"></app-rent> -->
+            <div class="right col-lg-9">
+                <div class=" bgc container-fluid">
+                        <button class="btn btn-warning d-lg-none" *ngIf="!enableSideBar" (click)="showSideBar()">
+                                <img src="../../assets/menu.png" alt="">
+                             </button>
+                        <div class="row row1 ">
+
+
+                            <!-- !-------------------------- the catigories ------------------------! -->
+
+                            <div class="cati-div col-sm-4" *ngFor="let resultObj of result">
+                                <div class="catdirdiv" (click)="getParam(resultObj._id)" >
+                                    <img src="{{ bEurl + resultObj.image }}" alt="" class="cati" style="width: 75%;">
+                                    <h3>{{ resultObj.name }}</h3>
+                                </div>
+                            </div>
+                        </div>
+
+
+                            <!-- !-------------------------- the footer ------------------------! -->
+
+                        <div class="row footer">
+                            <img src="../../assets/footer.png" alt="" class="coffefooter">
+                        </div>
+                    </div>
+            </div>
+        </div> 
+    </div>
+
+<router-outlet></router-outlet>
+<!-- <div class=" bgc container-fluid">
+        <div class="row row1 ">
+            <div class="cati-div col-sm-4">
+                <div class="catdirdiv">
+                    <img src="../../assets/tech/monitor.png" alt="" class="cati">
+                    <h3>LCD TV.</h3>
+                </div>  
+            </div>
+            <div class="cati-div col-sm-4">
+                <div class="catdirdiv">
+                    <img src="../../assets/tech/keyboard.png" alt="" class="cati" style="width: 75%;">
+                    <h3>Keyboard</h3>
+                </div>
+            </div>
+            <div class="cati-div col-sm-4">
+                <div class="catdirdiv">
+                    <img src="../../assets/tech/mouse.png" alt="" class="cati" style="width: 25%;">
+                    <h3>Mouse</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row row1 ">
+            <div class="cati-div col-sm-4">
+                <div class="catdirdiv">
+                    <img src="../../assets/tech/flashmemory.png" alt="" class="cati" style="width: 35%;">
+                    <h3 style="font-size: 35px;">Flash Memory</h3>
+                </div>
+            </div>
+            <div class="cati-div col-sm-4">
+                <div class="catdirdiv">
+                    <img src="../../assets/tech/electric switch.png" alt="" class="cati">
+                    <h3 style="font-size: 35px;">Electric Switch</h3>
+                </div>
+            </div>
+            <div class="cati-div col-sm-4">
+                <div class="catdirdiv">
+                    <img src="../../assets/tech/access point.png" alt="" class="cati">
+                    <h3>Access Point</h3>
+                </div>
+            </div>
+        </div>
+    </div> -->

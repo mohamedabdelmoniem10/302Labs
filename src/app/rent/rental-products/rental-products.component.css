@@ -1,0 +1,167 @@
+app-aside{
+    position: fixed;
+    height: 100%;
+}
+.right
+{
+    padding: 0 0 0 10px;
+    position: absolute;
+    right: 0;
+}
+.row1
+{
+    padding: 50px 20px
+}
+.bgc
+{
+    background-color: #005e97;
+    width: 100%;
+    min-height: 100vh;
+    padding-left: 0; 
+    box-shadow: #005e97 4px 8px 6px 11px
+}
+.cati
+{
+    width: 50%;
+    margin: 0 auto;
+    display: block
+}
+.catdirdiv:hover 
+{
+    border: 2px solid #fff
+}
+.cati-div
+{
+    padding: 10px;
+}
+.catdirdiv
+{
+    cursor: pointer;
+    width: 311px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    padding: 20px;
+}
+h3
+{
+    padding: 10px;
+    color: #fff;
+    margin: 0;
+}
+.spec span
+{
+    width: 85%;
+    margin: 10px auto;
+    color: #fff;
+}
+.clock
+{
+    width: 18px;
+}
+.coffefooter
+{
+    width: 100%;
+    
+}
+.footer
+{
+    padding: 0;
+    margin-left: 0;
+}
+
+.item-perview
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 80vh;
+    background-color: #005d977a;
+    z-index: 20;
+}
+.box
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: auto;
+    z-index: 30;
+    background-color: #005e97;
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid #fff;
+    color: #fff;
+}
+.close{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    z-index: 30;
+}
+.close-img
+{
+    background: #fff;
+    border-radius: 100%;
+    width: 40px;
+}
+.spec-item{
+    width: 75%;
+    margin: 3px;
+}
+.item{
+    width: 100%;
+    padding: 2px 15px;
+    color: #fff;
+    background-color: #000;
+    margin: 0 auto;
+}
+.input{
+    width: 40px;
+    margin: 3px;
+}
+.txt{
+    width: 75%;
+    margin: 10px auto;
+}
+.abs
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75%;
+    min-height: 100%;
+    z-index: 2000;;
+}
+.btn img{
+    width: 20px
+}
+.btn-warning{
+    position: fixed;
+    top: 5%;
+    left: 3%;
+    z-index: 1999;
+}
+
+
+/* this is the fucking media */
+@media (max-width: 1000px) {
+    .txt{
+        width: 100%;
+    }
+    .cati{
+        width: 100%;
+        height: auto;
+    }
+    .box{
+        left: 45%;
+        height: auto;
+    }
+    .close{
+        right: 12%;
+    }
+}

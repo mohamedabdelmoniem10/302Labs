@@ -1,0 +1,44 @@
+<div class="bgc container-fluid">
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-warning arrow-btn" *ngIf="enableSideBar" (click)="hideBar()"><img src="../../assets/left-arrow.svg" alt=""></button>
+
+            <!-- logo here -->
+        <div class="userinfo">
+            <img src="{{ userImage }}" alt="" class="logo-dyn" title="">
+            <i class="fa fa-circle text-success"></i>
+            <div class="user-name">
+                {{ userName }} 
+            </div>
+        </div>
+            <!-- here is the background shape -->
+
+            <img src="../../assets/formbackground.png" alt="" class="bgshape">
+
+            <!-- horizontal row -->
+            <!-- <div class="hr"></div> -->
+
+            <hr>
+            <!-- here is the navigation of the website -->
+            <nav class="nav">
+                <ul class="nav-ul">
+                    <li routerLink="/profile" routerLinkActive="active"><a >Profile</a></li>
+            <hr class="linkshr">
+                    <li routerLink="/rent" routerLinkActive="active"><a >Rent</a></li>
+            <hr class="linkshr">
+                    <li routerLink="/coffeshop" routerLinkActive="active"><a >Coffeshop</a></li>
+            <hr class="linkshr">
+                    <li routerLink="/events" routerLinkActive="active"><a >Events</a></li>
+            <hr class="linkshr">
+                    <li routerLink="/billing" routerLinkActive="active"><a >Billing</a></li>
+            <hr class="linkshr">
+                </ul>
+            </nav>
+
+
+            <button type="button" class="btn btn-warning" class="subtn" (click)="logOut()">Log Out</button>
+
+            
+        </div>
+    </div>
+</div>

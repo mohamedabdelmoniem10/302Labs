@@ -1,0 +1,99 @@
+<div class="container-fluid">
+   <div class="row">
+      <app-aside class="left p-0 col-lg-3" [class.abs]="enableSideBar"></app-aside>
+      <!-- <app-rent class="right col-lg-9"></app-rent> -->
+      <div class="right col-lg-9">
+         <div class=" bgc container-fluid">
+            <button class="btn btn-warning d-lg-none" *ngIf="!enableSideBar" (click)="showSideBar()">
+               <img src="../../assets/menu.png" alt="">
+            </button>
+            <img src="../assets/formbackground.png" alt="" class="formbg">
+            <div class="close">
+               <img src="../../assets/close.svg" class="closeimg" alt="" *ngIf="info" (click)="showField = !showField" (click)="info = !info">
+            </div>
+            <div class="avat" [class.info]="info">
+               <div [class.avat-img]="info">
+               <div class="imgs" [formGroup]="uploadImg">
+                  <input type="file" id="file-input" formControlName="img" (change)="uploadImgFunc($event)">  
+                  <label class="show" for="file-input">
+                  <img src="{{ urlOfImg }}" alt="" class="avatar" title="your avatar"> <!-- this is the user image -->
+                  <img src="../assets/uploadimg.png" alt="" class="uploadimg" title="upload your avatar">
+               </label>
+               </div>
+               </div>
+                  <button class="subtn" [class.subtnactive]="info" (click)="infoPanel()">User Info</button>
+                </div>
+                <div class="information" *ngIf="info">
+                 
+                  
+                <!-- this was an editting from moniem and the leader declare it  -->
+                 <div class="start" *ngIf="!showField">
+                    
+                   
+                    <hr>
+
+                    <!-- email field -->
+                    <div class="data email" *ngIf="email">
+                       <span class="bold">
+                       Email:
+                       </span>
+                       <div class="email beData">{{ email }}</div>
+                       
+                    </div>
+                    <hr *ngIf="email">
+
+
+                    <!-- password field -->
+                    <div class="data password">
+                       <span class="bold">
+                           Password:
+                        </span>
+                        <div class="beData">
+                        <span class="beData">&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;</span>
+                     </div>
+                    </div>
+                    <hr>
+                    <!-- this field for name -->
+                    <div class="data name" *ngIf="name">
+                       <span class="bold">
+                           Name:
+                        </span>
+                        <div class="name beData">{{ name }}</div>
+                    </div>
+                    <hr *ngIf="name">
+                    <div class="data roomnumber" *ngIf="roomnumber">
+                       <span class="bold">
+                           Room Number:
+                        </span>
+                        <div class="roomnumber beData">{{ roomnumber }}</div>
+                    </div>
+                    <hr *ngIf="roomnumber">
+                    <div class="data phonenumber" *ngIf="phonenumber">
+                        <span class="bold">
+                            Phone Number:
+                         </span>
+                         <div class="phonenumber beData">{{ phonenumber }}</div>
+                     </div>
+                     <hr *ngIf="phonenumber">
+                     <button class="btn btn-secondary" (click)="showField = !showField">Edit Info</button>
+
+
+
+                  </div>
+                  <!-- /.end of start -->
+                  <app-edit-profile class="start" *ngIf="showField"></app-edit-profile>
+                  
+                  
+               
+               
+
+            </div>
+               <!-- /.end of info -->
+              </div>
+              <!-- /.end of bgc -->
+            </div>
+        </div>
+     </div>
+     
+     <router-outlet></router-outlet>
+

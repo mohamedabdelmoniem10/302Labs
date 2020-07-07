@@ -1,0 +1,27 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+@font-face {
+    font-family: 'Sukar-black';
+    src: url('./assets/Sukar-black/Sukar-black.eot?#iefix') format('embedded-opentype'),
+         url('./assets/Sukar-black/Sukar-black.woff') format('woff'),
+         url('./assets/Sukar-black/Sukar-black.ttf')  format('truetype'),
+         url('./assets/Sukar-black/Sukar-black.svg#Sukar-black') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+/* You can add global styles to this file, and also import other style files */
+
+
+body{
+    font-family: 'Sukar-black'!important;
+    
+}
+ngb-datepicker div.ngb-dp-months
+{
+    justify-content: space-around;
+}
+@media (max-width: 1200px) {
+    body{
+        font-size: .7em;
+    }
+}

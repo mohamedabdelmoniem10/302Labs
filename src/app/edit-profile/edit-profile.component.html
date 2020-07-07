@@ -1,0 +1,60 @@
+   <!-- the editting window -->
+   <form [formGroup]="editting" class="start">
+        <!-- email field -->
+        <div class="data email">
+           <span class="bold">
+              Email:
+            </span>
+            <div class="edit-email form-group beData" >
+             <input type="text" class="input-new-data" formControlName="email" placeholder="{{email}}">
+            </div>
+        </div>
+      <hr>
+      <!-- password field -->
+      <div class="data password">
+         <span class="bold">
+               Password:
+            </span>
+               <div class="edit-pass form-group beData">
+               
+                  New Password<input type="password" class="input-new-data" formControlName="newpass"> <br>
+            </div>
+      </div>
+      <hr>
+      <!-- end password field  -->
+      <!-- this field for name -->
+      <div class="data name">
+         <span class="bold">
+            Name:
+         </span>
+         <div class="edit-email beData">
+            <input type="text" class="input-new-data" formControlName="name" placeholder="{{name}}">
+         </div>
+      </div>
+      <hr>
+      <!-- this field for roomnumber -->
+      <div class="data roomnumber">
+         <span class="bold">
+            Room Number:
+         </span>
+         <div class="edit-email beData">
+            <input type="text" class="input-new-data" formControlName="roomNumber" placeholder="{{roomnumber}}">
+         </div>
+      </div>
+      <hr>
+      <!-- this field for phone number  -->
+      <div class="data phonenumber">
+         <span class="bold">
+            Phone Number:
+         </span>
+         <div class="edit-email beData">
+            <input type="text" class="input-new-data" formControlName="phone" placeholder="{{phonenumber}}">
+         </div>
+      </div>
+      <hr>
+
+      
+      
+      <button class="btn btn-success" (click)="updateUserData()">save changes</button>
+      
+    </form> 
